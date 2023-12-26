@@ -1,7 +1,9 @@
-package org.example;
+package example;
 
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -61,15 +63,15 @@ public class BlockOnlineTest {
     }
 
     @Test
-    public void serviceLinkTest(){
+    public void serviceLinkTest() {
         driver.get("https://www.mts.by/");
         WebElement serviceLink = driver.findElement(By.xpath("//a[text()='Подробнее о сервисе']"));
         assertTrue(serviceLink.isDisplayed(), "Service link is not displayed.");
         serviceLink.click();
 
-        String expectedURL="https://www.mts.by/help/poryadok-oplaty-i-bezopasnost-internet-platezhey/";
-        String gettingURL =driver.getCurrentUrl();
-        assertEquals(gettingURL,expectedURL,"Service link is not working correctly, it opened the wrong page");
+        String expectedURL = "https://www.mts.by/help/poryadok-oplaty-i-bezopasnost-internet-platezhey/";
+        String gettingURL = driver.getCurrentUrl();
+        assertEquals(gettingURL, expectedURL, "Service link is not working correctly, it opened the wrong page");
     }
 
     @Test

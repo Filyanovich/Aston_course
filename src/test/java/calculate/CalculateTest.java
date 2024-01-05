@@ -37,12 +37,13 @@ public class CalculateTest {
         }
     }
 
-    private By plus =By.id("com.google.android.calculator:id/op_add");
-    private By minus =By.id("com.google.android.calculator:id/op_sub");
-    private By divided=By.id("com.google.android.calculator:id/op_div");
-    private By multiplied=By.id("com.google.android.calculator:id/op_mul");
-    private By resultButton=By.id("com.google.android.calculator:id/eq");
+    private By plus = By.id("com.google.android.calculator:id/op_add");
+    private By minus = By.id("com.google.android.calculator:id/op_sub");
+    private By divided = By.id("com.google.android.calculator:id/op_div");
+    private By multiplied = By.id("com.google.android.calculator:id/op_mul");
+    private By resultButton = By.id("com.google.android.calculator:id/eq");
     private By result = By.id("com.google.android.calculator:id/result_final");
+
     @Test
     public void additionTest() {
         driver.findElement(By.id("com.google.android.calculator:id/digit_2")).click();
@@ -52,6 +53,7 @@ public class CalculateTest {
         assertEquals(driver.findElement(result).getText(), "5");
 
     }
+
     @Test
     public void subtractionTest() {
         driver.findElement(By.id("com.google.android.calculator:id/digit_8")).click();
@@ -60,6 +62,7 @@ public class CalculateTest {
         driver.findElement(resultButton).click();
         assertEquals(driver.findElement(result).getText(), "7");
     }
+
     @Test
     public void dividedTest() {
         driver.findElement(By.id("com.google.android.calculator:id/digit_1")).click();
@@ -69,6 +72,7 @@ public class CalculateTest {
         driver.findElement(resultButton).click();
         assertEquals(driver.findElement(result).getText(), "4");
     }
+
     @Test
     public void multipliedTest() {
         driver.findElement(By.id("com.google.android.calculator:id/digit_2")).click();
